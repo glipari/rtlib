@@ -8,11 +8,11 @@ Real-time simulation library
 - Maintainer:     Fabio Cremona
 - Contributors:   See list at the end
 
-# What is RTLib? 
+## What is RTLib? 
 
 TBC
 
-# Compiling
+## Compiling
 
 The first time you want to compile the library, you must invoke
 
@@ -27,19 +27,19 @@ is installed in a sibling directory of rtlib. Such thing will change in
 the future. For the moment, if you need to install metasim somewhere else, 
 please consider modifying =Makefile.am= youself.
 
-# Install
+## Install
 
 TBC
 
-# Running the examples
+## Running the examples
 
 TBC
 
-# Documentation 
+## Documentation 
 
 TBC
 
-# Contributors list
+## Contributors list
 
 - Giuseppe Lipari
 - Gerardo Lamastra
@@ -48,7 +48,6 @@ TBC
 - Cesare Bartolini
 - Claudio Scordino
 - Luca Marzario
-
 - Fabio Cremona
 - Matteo Morelli
 
