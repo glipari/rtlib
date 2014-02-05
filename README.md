@@ -17,7 +17,18 @@ TBC
 * Compiling
 ------------
 
-TBC
+The first time you want to compile the library, you must invoke
+
+: autoreconf && ./configure
+
+Then, to compile simply type 
+  
+: make
+
+For the monent, the assumption (encodend in =Makefile.am=) is that metasim
+is installed in a sibling directory of rtlib. Such thing will change in 
+the future. For the moment, if you need to install metasim somewhere else, 
+please consider modifying =Makefile.am= youself.
 
 * Install
 ----------
