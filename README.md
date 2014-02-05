@@ -8,45 +8,38 @@ Real-time simulation library
 - Maintainer:     Fabio Cremona
 - Contributors:   See list at the end
 
-* What is RTLib? 
------------------
+# What is RTLib? 
 
 TBC
 
-
-* Compiling
-------------
+# Compiling
 
 The first time you want to compile the library, you must invoke
 
-: autoreconf && ./configure
+    autoreconf && ./configure
 
 Then, to compile simply type 
   
-: make
+    make
 
 For the monent, the assumption (encodend in =Makefile.am=) is that metasim
 is installed in a sibling directory of rtlib. Such thing will change in 
 the future. For the moment, if you need to install metasim somewhere else, 
 please consider modifying =Makefile.am= youself.
 
-* Install
-----------
+# Install
 
 TBC
 
-* Running the examples
------------------------
+# Running the examples
 
 TBC
 
-* Documentation 
----------------
+# Documentation 
 
 TBC
 
-* Contributors list
--------------------
+# Contributors list
 
 - Giuseppe Lipari
 - Gerardo Lamastra
@@ -58,7 +51,4 @@ TBC
 
 - Fabio Cremona
 - Matteo Morelli
-
-
-
 
