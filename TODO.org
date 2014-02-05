@@ -1,0 +1,3 @@
+* TODO Modify configure.ac to detect presence of metasim
+
+* TODO [#A] Write README 
