@@ -183,8 +183,8 @@ namespace RTSim {
                 if (ee.getLastTime() < Measure::_transitory) return;
 
                 Task *t = ee.getTask();
-                Tick f = (long)ee.getLastTime();
-                Tick d = (long)t->getDeadline();
+                Tick f = ee.getLastTime();
+                Tick d = t->getDeadline();
                 if (f > d) Measure::record (f - d);
                 else Measure::record(0);
             }
