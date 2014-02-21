@@ -248,6 +248,13 @@ namespace RTSim {
          */
         virtual AbsRTTask* getTask(CPU*);
 
+        /**
+         It returns the name of the tasks (std::string) stored in a
+         std::vector<std::string>.
+         Each element of the vector corresponds to the name of a
+         different running task.
+         */
+        virtual std::vector<std::string> getRunningTasks();
     };
 } // namespace RTSim
 

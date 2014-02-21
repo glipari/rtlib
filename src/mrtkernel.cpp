@@ -394,7 +394,7 @@ namespace RTSim {
     void MRTKernel::print()
     {
         DBGPRINT("Executing");
-        for (ITCPU i = _m_currExe.begin(); i != _m_currExe.end(); ++i) 
+        for (ITCPU i = _m_currExe.begin(); i != _m_currExe.end(); ++i)
             DBGPRINT_4("  [", i->first, "] --> ", taskname(i->second));
         map<const AbsRTTask *, CPU *>::iterator j = _m_dispatched.begin();
         DBGPRINT("Dispatched");
@@ -406,4 +406,17 @@ namespace RTSim {
     {
         return _m_currExe[c];
     }
+    
+    std::vector<std::string> MRTKernel::getRunningTasks()
+    {
+        std::vector<std::string> tmp_ts;
+        for (auto i = _m_currExe.begin(); i != _m_currExe.end(); i++)
+        {
+            std::string tmp_name = taskname((*i).second);
+            if (tmp_name != "(nil)")
+                tmp_ts.push_back(tmp_name);
+        }
+        return tmp_ts;
+    }
+    
 }

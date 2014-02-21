@@ -595,4 +595,14 @@ namespace RTSim {
         feedback = afm;
     }
 
+    const InstrList& Task::getInstrQueue()
+    {
+        return instrQueue;
+    }
+
+    const InstrIterator& Task::getActInstr()
+    {
+        return actInstr();
+    }
+    
 }

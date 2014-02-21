@@ -312,4 +312,15 @@ namespace RTSim {
     void RTKernel::print() const
     {
     }
+    
+    std::vector<std::string>  RTKernel::getRunningTasks()
+    {
+        std::vector<std::string> tmp_ts;
+        std::string tmp_name = taskname(_currExe);
+
+        if (tmp_name != "(nil)")
+            tmp_ts.push_back(tmp_name);
+
+        return tmp_ts;
+    }
 }

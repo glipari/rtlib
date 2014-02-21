@@ -149,6 +149,18 @@ namespace RTSim {
         FakeArrEvt fakeArrEvt;
 
         DeadEvt deadEvt;
+        
+        /**
+         Returns a constant reference to the instruction queue
+         (instrQueue)
+         */
+        InstrList& getInstrQueue() const;
+        
+        /**
+         Returns a constant reference to the actual instruction
+         (actInstr)
+         */
+        InstrIterator& getActInstr() const;
 
     protected:
         friend class ArrEvt;

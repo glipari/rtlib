@@ -347,6 +347,14 @@ namespace RTSim {
             _contextSwitchDelay = t; 
         }
 
+        /**
+         It returns the name of the task (std::string) stored in a
+         std::vector<std::string>.
+         This solution is proposed to be compliant with the multi
+         core kernel, for which there could be more than one task 
+         running at the same time.
+         */
+        virtual std::vector<std::string> getRunningTasks();
     };
   
 } // namespace RTSim 

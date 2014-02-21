@@ -52,11 +52,11 @@ namespace RTSim {
   void JavaTrace::probeEndianess(void)
   {
     // Used for endianess check (Big/Little!)
-      static char const big_endian[] = {
-          static_cast<char const>(0xff),
-          static_cast<char const>(0),
-          static_cast<char const>(0xff),
-          static_cast<char const>(0)};
+    static char const big_endian[] = {
+        static_cast<char const>(0xff),
+        static_cast<char const>(0),
+        static_cast<char const>(0xff),
+        static_cast<char const>(0)};
     static int const probe = 0xff00ff00;
     int *probePtr = (int *)(big_endian);
  
