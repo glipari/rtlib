@@ -15,7 +15,7 @@ librtlib_la_SOURCES = bwi.cpp capacitytimer.cpp cbserver.cpp cpu.cpp edfsched.cp
 	mrtkernel.cpp piresman.cpp pollingserver.cpp reginstr.cpp regsched.cpp regtask.cpp \
 	resmanager.cpp resource.cpp rmsched.cpp rrsched.cpp schedinstr.cpp \
 	schedpoints.cpp schedrta.cpp scheduler.cpp server.cpp sparepot.cpp sporadicserver.cpp \
-	supercbs.cpp task.cpp taskevt.cpp threinstr.cpp timer.cpp traceevent.cpp waitinstr.cpp
+	supercbs.cpp task.cpp taskevt.cpp threinstr.cpp timer.cpp traceevent.cpp waitinstr.cpp instr.cpp
 
 # feedbackarsim.cpp 
 # rtload.cpp 

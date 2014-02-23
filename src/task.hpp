@@ -154,13 +154,19 @@ namespace RTSim {
          Returns a constant reference to the instruction queue
          (instrQueue)
          */
-        InstrList& getInstrQueue() const;
+        const InstrList& getInstrQueue() {return instrQueue;};
         
         /**
          Returns a constant reference to the actual instruction
          (actInstr)
          */
-        InstrIterator& getActInstr() const;
+        const InstrIterator& getActInstr() {return actInstr;};
+        
+        /**
+         Reset the instruction queue pointer:
+            actInstr = instrQueue.begin()
+         */
+        void resetInstrQueue();
 
     protected:
         friend class ArrEvt;
