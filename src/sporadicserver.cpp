@@ -365,7 +365,8 @@ namespace RTSim {
     }
  Tick SporadicServer::changeQ(const Tick &n)
 {
-  Q=n; 
+  Q=n;
+  return 0;
 }
 
 

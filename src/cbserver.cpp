@@ -333,6 +333,7 @@ namespace RTSim {
  Tick CBServer::changeQ(const Tick &n)
 {
   Q=n; 
+  return 0;
 }
 
 

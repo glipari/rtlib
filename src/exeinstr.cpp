@@ -194,6 +194,7 @@ namespace RTSim {
         actTime = lastTime = 0;
         flag = true;
         execdTime = 0;
+        _endEvt.drop();
 
         DBGPRINT("internal data reset...");
 

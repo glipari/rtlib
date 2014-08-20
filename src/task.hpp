@@ -147,6 +147,7 @@ namespace RTSim {
         SchedEvt schedEvt;
         DeschedEvt deschedEvt;
         FakeArrEvt fakeArrEvt;
+        KillEvt killEvt;
 
         DeadEvt deadEvt;
         
@@ -171,6 +172,7 @@ namespace RTSim {
     protected:
         friend class ArrEvt;
         friend class EndEvt;
+        friend class KillEvt;
         friend class SchedEvt;
         friend class DeschedEvt;
         friend class FakeArrEvt;
@@ -192,6 +194,11 @@ namespace RTSim {
            @todo change its name into onInstanceEnd().
         */
         virtual void onEnd(MetaSim::Event *);
+        
+        /**
+         This event handler is invoked when a task instance has been killed.
+         */
+        virtual void onKill(MetaSim::Event *);
 
         /**
            This event handler is invoked everytime the task is scheduled (i.e. 
@@ -281,7 +288,7 @@ namespace RTSim {
 
         Task(RandomVar *iat, Tick rdl, Tick ph = 0, 
              const std::string &name = "", 
-             long qs = __LONG_MAX__, Tick maxC=0);
+             long qs = 1000, Tick maxC=0);
 
         /**
            Virtual destructor. Does nothing.
@@ -340,6 +347,16 @@ namespace RTSim {
         */ 
         void killInstance() throw(TaskNotActive, TaskNotExecuting);
 
+        
+        /**
+            This method permits to select the behaviour of the task when a 
+            deadline miss occurs.
+         
+            @param kill = true, to kill the task when a deadline miss occurs
+            @param kill = false, to contine the task when a deadline miss occurs
+         */
+        void killOnMiss(bool kill);
+        
         /** 
             Event propagated by instructions. It is invoked when an
             instruction is completed. The default behavior is to increment

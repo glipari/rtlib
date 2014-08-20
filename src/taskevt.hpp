@@ -64,6 +64,16 @@ namespace RTSim {
         EndEvt(Task* t) :TaskEvt(t, _END_EVT_PRIORITY) {}
         virtual void doit();
     };
+    
+    /// when a task is killed
+    /// \ingroup task
+    class KillEvt: public TaskEvt
+    {
+    public:
+        static const int _END_EVT_PRIORITY = _DEFAULT_PRIORITY - 2;
+        KillEvt(Task* t) :TaskEvt(t, _END_EVT_PRIORITY) {}
+        virtual void doit();
+    };
 
     /// when the event is triggered, the task starts executing on processor
     /// \ingroup task
@@ -116,15 +126,17 @@ namespace RTSim {
     {
     protected:
         bool _abort;
+        bool _kill;
 
     public:
         static const int _DEAD_EVT_PRIORITY = EndEvt::_END_EVT_PRIORITY + 3; 
 
-        DeadEvt(Task* t, bool abort)
-            :TaskEvt(t, _DEAD_EVT_PRIORITY), _abort(abort) {}
+        DeadEvt(Task* t, bool abort, bool kill)
+            :TaskEvt(t, _DEAD_EVT_PRIORITY), _abort(abort), _kill(kill) {}
 
         virtual void doit();  
         void setAbort(bool f) {_abort = f;}
+        void setKill(bool f) {_kill = f;}
     };
 
 } // namespace RTSim

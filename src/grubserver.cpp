@@ -27,24 +27,32 @@ namespace RTSim {
 
     void GrubSupervisor::set_active(Grub *g) 
     {
-	for (auto sp : servers) 
-	    sp->updateBudget();
+	for (auto sp = servers.begin();
+	        sp != servers.end();
+	            ++sp) 
+	    (*sp)->updateBudget();
 
 	active_u += g->getUtil();
 
-	for (auto sp : servers) 
-	    sp->startAccounting();
+	for (auto sp = servers.begin();
+	        sp != servers.end();
+	            ++sp) 
+	    (*sp)->startAccounting();
     }
 
     void GrubSupervisor::set_idle(Grub *g) 
     {
-	for (auto sp : servers) 
-	    sp->updateBudget();
+	for (auto sp = servers.begin();
+	        sp != servers.end();
+	            ++sp) 
+	    (*sp)->updateBudget();
 
 	active_u -= g->getUtil();
 
-	for (auto sp : servers) 
-	    sp->startAccounting();
+	for (auto sp = servers.begin();
+	        sp != servers.end();
+	            ++sp) 
+	    (*sp)->startAccounting();
     }
 
     Tick GrubSupervisor::get_capacity()
@@ -215,6 +223,7 @@ namespace RTSim {
     {
 	// nothing to do now
 	assert(0);
+	return 0;
     }
     
     void Grub::set_supervisor(GrubSupervisor *s)

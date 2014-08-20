@@ -15,6 +15,7 @@
 
 #include <scheduler.hpp>
 #include <task.hpp>
+#include <climits>
 
 namespace RTSim {
 
@@ -23,7 +24,7 @@ namespace RTSim {
 
     TaskModel::TaskModel(AbsRTTask* t)
         : _rtTask(t), active(false), 
-         _insertTime(0), _threshold(__INT_MAX__) 
+         _insertTime(0), _threshold(INT_MAX) 
     {
     }
 

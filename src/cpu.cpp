@@ -146,7 +146,7 @@ namespace RTSim {
   
     void CPU::check(){
         cout << "Checking CPU:" << cpuName << endl;;
-        cout << "Max Power Consumption is :" << getMaxPowerConsumption() << endl;;
+        cout << "Max Power Consumption is :" << getMaxPowerConsumption() << endl;
         for (vector<cpulevel>::iterator iter = steps.begin(); iter != steps.end(); iter++){
             cout << "-Level-" << endl;
             cout << "\tFrequency:" << (*iter).frequency << endl;

@@ -375,7 +375,7 @@ namespace RTSim {
 
 	virtual bool isContextSwitching() const { return false; }
 
-            virtual std::vector<std::string> getRunningTasks() {};
+//	virtual std::vector<std::string> getRunningTasks() = 0;
     };
 } // namespace RTSim
 

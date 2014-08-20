@@ -179,10 +179,10 @@ namespace RTSim {
     public:
         PeriodicTask(Tick iat)
             : Task(new DeltaVar(iat), iat, 0, "", 
-                   __LONG_MAX__), period(iat) {}
+                   1000), period(iat) {}
 
         PeriodicTask(Tick iat, Tick rdl, Tick ph = 0,
-                     const std::string &name = "", long qs = __LONG_MAX__)
+                     const std::string &name = "", long qs = 100)
             : Task(new DeltaVar(iat), rdl, ph, name, qs), period(iat) {}
 
         inline Tick getPeriod() { return period; } 
@@ -215,7 +215,7 @@ namespace RTSim {
                 Tick p = Tick(par[2]);
                 const char* n = "";
                 if (par.size() > 2) n = par[3].c_str();
-                long q = __LONG_MAX__;
+                long q = 100;
                 if (par.size() > 4) q = atoi(par[4].c_str());
                 bool a = true;
                 if (par.size() > 5 && !strcmp(par[5].c_str(), "false")) a = false;
